@@ -1,4 +1,4 @@
-package com.company;
+package timetable.model;
 
 public class Main {
 
