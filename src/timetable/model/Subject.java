@@ -1,5 +1,4 @@
 package timetable.model;
 
-public class Main {
-
+public class Subject {
 }
