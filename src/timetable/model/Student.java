@@ -1,17 +1,19 @@
 package timetable.model;
 
+import java.util.Objects;
+
 public class Student extends Person {
     private Group group;
-    private int kurs;
+    private int course;
 
-    public Student(String firstName, String lastName, int kurs) {
+    public Student(String firstName, String lastName, int course, int i) {
         super(firstName, lastName);
-        this.kurs = kurs;
+        this.course = this.course;
     }
 
-    public Student(String firstName, String lastName, int kurs, Group group) {
+    public Student(String firstName, String lastName, int course, Group group) {
         super(firstName, lastName);
-        this.kurs = kurs;
+        this.course = course;
         this.group = group;
     }
 
@@ -23,12 +25,12 @@ public class Student extends Person {
         this.group = group;
     }
 
-    public int getKurs() {
-        return kurs;
+    public int getCourse() {
+        return course;
     }
 
-    public void setKurs(int kurs) {
-        this.kurs = kurs;
+    public void setCourse(int course) {
+        this.course = course;
     }
 
 }

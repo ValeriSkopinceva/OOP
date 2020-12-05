@@ -1,33 +1,38 @@
 package timetable.model;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Group {
-    private ArrayList<Student> list;
+    private Set<Student> students;
     private int number;
+    private int course;
 
-    public Group(int number) {
-        this.list = new ArrayList<>();
+    public Group(int number, int course) {
+        this.students = new LinkedHashSet<>();
         this.number = number;
+        this.course = course;
     }
 
-    public void addStudent(Student student) {
-        if (!list.contains(student)) { // проверка существует ли этот студент в группе
-            list.add(student);
-        }
-    }
 
-    public void removeStudent(Student student) {
-        list.remove(student);
-    }
-
-    public ArrayList<Student> getList() {
-        return this.list;
+    public Set<Student> getStudents() {
+        return this.students;
     }
 
     public int getNumber() {
         return this.number;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public int getCourse(int course) {
+        return course;
+    }
+
+    public String toString() {
+        return " номер группы " + this.number + " курс " + this.course;
     }
 }
