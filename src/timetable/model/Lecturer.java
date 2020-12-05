@@ -1,8 +1,8 @@
 package timetable.model;
 
 public class Lecturer extends Person {
-    private static boolean practitioner;
-    private static boolean lecturer;
+    private  boolean practitioner;
+    private  boolean lecturer;
 
     public Lecturer(String firstName, String lastName, boolean practitioner, boolean lecturer) {
         super(firstName, lastName);
@@ -10,19 +10,19 @@ public class Lecturer extends Person {
         this.lecturer = lecturer;
     }
 
-    public static boolean isPractitioner() {
+    public boolean isPractitioner() {
         return practitioner;
     }
 
-    public static void setPractitioner(boolean practitioner) {
-        Lecturer.practitioner = practitioner;
+    public void setPractitioner(boolean practitioner) {
+        this.practitioner = practitioner;
     }
 
-    public static boolean isLecturer() {
+    public boolean isLecturer() {
         return lecturer;
     }
 
-    public static void setLecturer(boolean lecturer) {
-        Lecturer.lecturer = lecturer;
+    public void setLecturer(boolean lecturer) {
+        this.lecturer = lecturer;
     }
 }

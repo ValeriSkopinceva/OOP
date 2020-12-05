@@ -1,9 +1,20 @@
 package timetable.model;
 
+import static timetable.model.Weekday.Tuesday;
+
 public class Lesson {
-    private static String subject;
-    private static int hourPerWeek;
-    private static int number;
+    private String subject;
+    private int hourPerWeek;
+    private int number;
+    private enum Weekday {Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday;
+    }
+
 
     public Lesson(String subject, int hourPerWeek, int number) {
         this.subject = subject;
@@ -11,27 +22,54 @@ public class Lesson {
         this.number = number;
     }
 
-    public static String getSubject() {
+    public String getSubject() {
         return subject;
     }
 
-    public static void setSubject(String subject) {
-        Lesson.subject = subject;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public static int getHourPerWeek() {
+    public int getHourPerWeek() {
         return hourPerWeek;
     }
 
-    public static void setHourPerWeek(int hourPerWeek) {
-        Lesson.hourPerWeek = hourPerWeek;
+    public void setHourPerWeek(int hourPerWeek) {
+        this.hourPerWeek = hourPerWeek;
     }
 
-    public static int getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    public static void setNumber(int number) {
-        Lesson.number = number;
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public Weekday toStringForDays() {
+        if (Weekday.Monday.equals(this)) {
+            System.out.println("Monday");
+            return Weekday.Monday;
+        } else if (Tuesday.equals(this)) {
+            System.out.println(Tuesday);
+            return Weekday.Tuesday;
+        } else if (Weekday.Wednesday.equals(this)) {
+            System.out.println("Wednesday");
+            return Weekday.Wednesday;
+        } else if (Weekday.Thursday.equals(this)) {
+            System.out.println("Thursday");
+            return Weekday.Thursday;
+        } else if (Weekday.Friday.equals(this)) {
+            System.out.println("Friday");
+            return Weekday.Friday;
+        } else if (Weekday.Saturday.equals(this)) {
+            System.out.println("Saturday");
+            return Weekday.Saturday;
+        } else if (Weekday.Sunday.equals(this)) {
+            System.out.println("Sunday");
+            return Weekday.Sunday;
+        }
+
+        return null;
     }
 }

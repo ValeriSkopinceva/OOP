@@ -11,7 +11,7 @@ public class GroupService {
     public static ArrayList<Group> groups = new ArrayList<>();
     public static HashSet<Student> students = new HashSet<>();
 
-    private Group findGroupReturnGroup(int number, int course) {  //поиск группы
+    public Group findGroupReturnGroup(int number, int course) {  //поиск группы
         for (Group group : groups) {
             if (group.getCourse() == course && group.getNumber() == number) {
                 return group;
