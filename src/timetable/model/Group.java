@@ -15,7 +15,6 @@ public class Group {
         this.course = course;
     }
 
-
     public Set<Student> getStudents() {
         return this.students;
     }
