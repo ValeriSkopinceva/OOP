@@ -20,7 +20,7 @@ public class GroupService {
         return null;
     }
 
-    private boolean findGroupReturnBool(int number, int course) {  //поиск группы
+    public boolean findGroupReturnBool(int number, int course) {  //поиск группы
         for (Group group : groups) {
             if (group.getCourse() == course && group.getNumber() == number) {
                 return true;
@@ -58,5 +58,33 @@ public class GroupService {
             }
         } else
             System.out.println("Нет такой группы");
+    }
+
+    private void zapol(){
+        GroupService groupService = new GroupService();
+        Student student = new Student("Victor", "Petrovich", 4, 8);
+        Student student1 = new Student("gfgff", "ggghgh", 1, 1);
+        students.add(student);
+        students.add(student1);
+
+        Group group_1_1 = new Group(1, 1);
+        Group group_2_1 = new Group(2, 1);
+        Group group_3_1 = new Group(3, 1);
+        Group group_4_1 = new Group(4, 1);
+        Group group_5_1 = new Group(5, 1);
+        groups.add(group_1_1);
+        groups.add(group_2_1);
+        groups.add(group_3_1);
+        groups.add(group_4_1);
+        groups.add(group_5_1);
+
+
+
+
+        groupService.addStudent(student, 4, 8);
+        groupService.enterGroups(GroupService.groups);
+        groupService.displayStudentInGroup(GroupService.groups, 1, 1);
+
+
     }
 }
