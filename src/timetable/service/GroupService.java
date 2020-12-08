@@ -41,31 +41,18 @@ public class GroupService {
         students.remove(studentToRemove);
     }
 
-    public void enterGroups(ArrayList<Group> groups) { //  вывод списка групп
-        for (Group group : groups) {
-            System.out.println(group);
-        }
-    }
-
-    public void displayStudentInGroup(ArrayList<Group> groups, int number, int course) {  //вывод студентов в конкретной группе УРАААААААААААААА
-        if (findGroupReturnBool(number, course)) {  //проверить существование групп с таким номером и курсом (findGroup)
-            // черт бы побрал этот вывод объектов
-            ArrayList<Student> studentArrayList = new ArrayList<>(groups.get(number).getStudents());
-            for (Student student : students) {
-                System.out.println("Имя студента: " + student.getFirstName() + ", фамилия студента: " + student.getLastName()
-                        +", курс: " +  course + ", группа " + number); // да за что???
-            //+ student.getCourse() + ... student.getGroup() <- нужно, чтобы работало так
-            }
-        } else
-            System.out.println("Нет такой группы");
-    }
-
-    private void zapol(){
+    private void completion() {
         GroupService groupService = new GroupService();
-        Student student = new Student("Victor", "Petrovich", 4, 8);
-        Student student1 = new Student("gfgff", "ggghgh", 1, 1);
+        Student student = new Student("Victor", "Petrovich", 1, 1);
+        Student student1 = new Student("Petr", "Victorovich", 1, 2);
+        Student student2 = new Student("Lubov","Kotova",1,3);
+        Student student3 = new Student("Maksim","Popov",1,4);
+        Student student4 = new Student("Veronika","Morozkova",1,5);
         students.add(student);
         students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
 
         Group group_1_1 = new Group(1, 1);
         Group group_2_1 = new Group(2, 1);
@@ -77,14 +64,5 @@ public class GroupService {
         groups.add(group_3_1);
         groups.add(group_4_1);
         groups.add(group_5_1);
-
-
-
-
-        groupService.addStudent(student, 4, 8);
-        groupService.enterGroups(GroupService.groups);
-        groupService.displayStudentInGroup(GroupService.groups, 1, 1);
-
-
     }
 }

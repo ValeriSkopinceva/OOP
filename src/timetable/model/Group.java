@@ -34,4 +34,21 @@ public class Group {
     public String toString() {
         return " номер группы " + this.number + " курс " + this.course;
     }
+
+    public boolean equals(Group group) {
+        if (group == this) {
+            return true;
+        }
+        if (group == null || group.getClass() != this.getClass()) {
+            return false;
+        }
+
+        Group guest = (Group) group;
+        return number == guest.number
+                && course == guest.course;
+    }
+
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
