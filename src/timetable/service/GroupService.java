@@ -1,0 +1,68 @@
+package timetable.service;
+
+import timetable.model.Group;
+import timetable.model.Student;
+
+import java.util.Set;
+
+import java.util.*;
+
+public class GroupService {
+    public static ArrayList<Group> groups = new ArrayList<>();
+    public static HashSet<Student> students = new HashSet<>();
+
+    public Group findGroupReturnGroup(int number, int course) {  //поиск группы
+        for (Group group : groups) {
+            if (group.getCourse() == course && group.getNumber() == number) {
+                return group;
+            }
+        }
+        return null;
+    }
+
+    public boolean findGroupReturnBool(int number, int course) {  //поиск группы
+        for (Group group : groups) {
+            if (group.getCourse() == course && group.getNumber() == number) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addStudent(Student student, int number, int course) {
+        Group group = findGroupReturnGroup(number, course);
+        if (group != null) {
+            group.getStudents().add(student);
+        }
+    }
+
+
+    public void removeStudent(Set<Student> students, Student studentToRemove) {
+        students.remove(studentToRemove);
+    }
+
+    private void completion() {
+        GroupService groupService = new GroupService();
+        Student student = new Student("Victor", "Petrovich", 1, 1);
+        Student student1 = new Student("Petr", "Victorovich", 1, 2);
+        Student student2 = new Student("Lubov","Kotova",1,3);
+        Student student3 = new Student("Maksim","Popov",1,4);
+        Student student4 = new Student("Veronika","Morozkova",1,5);
+        students.add(student);
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+
+        Group group_1_1 = new Group(1, 1);
+        Group group_2_1 = new Group(2, 1);
+        Group group_3_1 = new Group(3, 1);
+        Group group_4_1 = new Group(4, 1);
+        Group group_5_1 = new Group(5, 1);
+        groups.add(group_1_1);
+        groups.add(group_2_1);
+        groups.add(group_3_1);
+        groups.add(group_4_1);
+        groups.add(group_5_1);
+    }
+}
